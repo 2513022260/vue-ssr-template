@@ -1,24 +1,16 @@
 # vue2.x-ssr-template
 
-## Project setup
-```
-npm install
-```
+## 思路
+1. 通用代码 【vue、router、store】
+    app.js
+        entry.client.js
+            webpack build:client
+                client 【vue-ssr-client-manifest.json】
+        entry.server.js
+            webpack build:server
+                server 【vue-ssr-server-bundle.json】
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+2. server/index.js 【服务端】
+    server 【vue-ssr-server-bundle.json】
+    client 【vue-ssr-client-manifest.json】
+      Browser【浏览器】
